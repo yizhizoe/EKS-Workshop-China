@@ -142,6 +142,11 @@ image_mirrors = {
             'k8s.gcr.io/': 'local-gcr-io/google-containers/',
             'quay.io/': 'local-quay-io/'
 }
+例如，image_mirrors = {
+            'gcr.io/': 'gcr.azk8s.cn/',
+            'k8s.gcr.io/': 'gcr.azk8s.cn/google-containers/',
+            'quay.io': 'quay.azk8s.cn'
+          }
 kubectl apply -f mutating-webhook.yaml
 ```
 
