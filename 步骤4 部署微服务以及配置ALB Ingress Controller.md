@@ -122,15 +122,6 @@ POLICY_NAME=$(aws iam list-policies --query 'Policies[?PolicyName==`ALBIngressCo
 >4.2.1.3 请使用上述返回的policy ARN创建service account
 
 ```bash
-eksctl create iamserviceaccount \
-       --cluster=<集群名字> \
-       --namespace=kube-system \
-       --name=alb-ingress-controller \
-       --attach-policy-arn=<policy ARN> \
-       --override-existing-serviceaccounts \
-       --region cn-northwest-1 \
-       --approve
-
 eksctl create iamserviceaccount --cluster=${CLUSTER_NAME} --namespace=kube-system \
   --name=alb-ingress-controller --attach-policy-arn=${POLICY_NAME} \
   --override-existing-serviceaccounts --region ${AWS_REGION} --approve
