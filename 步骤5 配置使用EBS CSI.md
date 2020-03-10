@@ -12,7 +12,7 @@
 #curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/v0.4.0/docs/example-iam-policy.json
 
 #请使用EKS-Workshop-China/resource/aws-ebs-csi-driver/ebs-csi-iam-policy.json
-aws iam create-policy --policy-name EKS_EBS_CSI_Driver_Policy 、
+aws iam create-policy --policy-name EKS_EBS_CSI_Driver_Policy \
     --policy-document file://./ebs-csi-iam-policy.json --region ${AWS_REGION}
         
 #返回示例,请记录返回的Plociy ARN
