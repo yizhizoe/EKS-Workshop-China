@@ -16,7 +16,7 @@ aws iam create-policy --policy-name EKS_EBS_CSI_Driver_Policy \
     --policy-document file://./ebs-csi-iam-policy.json --region ${AWS_REGION}
         
 #返回示例,请记录返回的Plociy ARN
-POLICY_NAME=$(aws iam list-policies --query 'Policies[?PolicyName==`EKS_EBS_CSI_Driver_Policy`].Arn' 、
+POLICY_NAME=$(aws iam list-policies --query 'Policies[?PolicyName==`EKS_EBS_CSI_Driver_Policy`].Arn' \
     --output text --region ${AWS_REGION})
 ```
     
